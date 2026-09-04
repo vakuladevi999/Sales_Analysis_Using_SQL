@@ -1,26 +1,29 @@
-📊 Sales EDA SQL Project
+🚀 Advanced SQL Sales Analysis Project
 
 📌 Project Overview
 
-This project focuses on performing Exploratory Data Analysis (EDA) on a sales dataset using SQL Server.
+This project focuses on performing Advanced Sales Analysis using SQL Server.
 
-The main goal of this project is to explore the database, understand the available data, calculate important business measures, and identify key patterns and trends in sales performance.
+After completing the Exploratory Data Analysis (EDA) project, this advanced project goes deeper into the sales data to uncover business trends, customer behavior, product performance, growth patterns, cumulative performance, and customer segmentation.
 
-The EDA project is divided into 6 analytical sections, covering database structure, dimensions, dates, business measures, sales magnitude, and rankings.
+The project demonstrates how advanced SQL techniques can be used to transform raw transactional data into meaningful business insights.
 
 ---
 
 🎯 Project Objectives
 
-The key objectives of this project are:
+The main objectives of this project are:
 
-- Explore and understand the database structure.
-- Identify unique values across customer and product dimensions.
-- Analyze the time period covered by the sales data.
-- Calculate important business measures and KPIs.
-- Analyze sales magnitude across different dimensions.
-- Rank products and categories based on their performance.
-- Generate meaningful business insights using SQL.
+- Analyze sales performance over time.
+- Identify sales trends and growth patterns.
+- Calculate cumulative and running totals.
+- Compare current performance with historical performance.
+- Analyze contribution to total sales.
+- Rank products and customers.
+- Segment customers based on their purchasing behavior.
+- Analyze product performance.
+- Identify high-value customers and products.
+- Use advanced SQL techniques to solve real-world business problems.
 
 ---
 
@@ -30,213 +33,407 @@ The key objectives of this project are:
 - SQL Server Management Studio (SSMS)
 - GitHub
 
-SQL Concepts Used
+Advanced SQL Concepts Used
 
-- "SELECT"
-- "DISTINCT"
-- "WHERE"
-- "GROUP BY"
-- "HAVING"
-- "ORDER BY"
-- Aggregate Functions
-- "JOIN"
-- Date Functions
-- String Functions
-- "CASE"
+- Common Table Expressions (CTEs)
+- Subqueries
 - Window Functions
 - Ranking Functions
+- "ROW_NUMBER()"
+- "RANK()"
+- "DENSE_RANK()"
+- "LAG()"
+- "LEAD()"
+- "SUM() OVER()"
+- "AVG() OVER()"
+- "PARTITION BY"
+- "ORDER BY"
+- "CASE"
+- Date Functions
+- Aggregate Functions
+- Conditional Aggregation
+- Customer Segmentation
+- Product Segmentation
 
 ---
 
-🔍 EDA Analysis
+🔍 Advanced Analysis
 
-1️⃣ Database Exploration
+1️⃣ Change Over Time Analysis
 
-The first step was to explore the database and understand its overall structure.
+This section analyzes how business performance changes over different periods.
 
-This section focuses on:
+The analysis includes:
 
-- Identifying available tables.
-- Understanding table relationships.
-- Exploring columns and their data types.
-- Understanding the role of each table in the sales database.
+- Monthly sales
+- Yearly sales
+- Monthly quantity
+- Monthly customer count
+- Monthly order count
+- Year-over-year changes
 
-Purpose:
-To understand the structure of the dataset before performing further analysis.
+Purpose
 
----
+To identify:
 
-2️⃣ Dimensions Exploration
-
-The customer and product dimensions were explored to understand the different categories and unique values available in the dataset.
-
-Customer Dimensions
-
-- Country
-- Gender
-- Marital Status
-
-Product Dimensions
-
-- Product Name
-- Category
-- Subcategory
-
-Purpose:
-To understand the different customer and product attributes available for analysis.
+- Growth trends
+- Declining periods
+- Seasonal patterns
+- Changes in customer activity
+- Changes in order volume
 
 ---
 
-3️⃣ Date Exploration
+2️⃣ Cumulative Analysis
 
-The sales data was analyzed from a time perspective.
+Cumulative calculations are used to understand how business performance builds over time.
 
-This section explores:
+The analysis includes:
 
-- Earliest order date
-- Latest order date
-- Sales period
-- Order years
-- Order months
-- Time range covered by the dataset
+- Running sales totals
+- Cumulative sales by month
+- Cumulative sales by year
+- Cumulative percentage of total sales
 
-Purpose:
-To understand the time period of the sales data and prepare it for time-based analysis.
+Window functions such as "SUM() OVER()" are used to calculate running totals.
+
+Purpose
+
+To understand how sales accumulate throughout the business period and how quickly the business reaches different levels of total revenue.
 
 ---
 
-4️⃣ Measures Exploration
+3️⃣ Performance Analysis
 
-Important business measures were calculated to understand the overall performance of the business.
+Performance analysis compares current performance against historical or average performance.
 
-Key measures include:
+The analysis can evaluate:
+
+- Product performance
+- Category performance
+- Monthly performance
+- Yearly performance
+- Current sales vs. average sales
+- Current performance vs. previous period
+
+Purpose
+
+To identify:
+
+- High-performing products
+- Underperforming products
+- Improving products
+- Declining products
+- Significant changes in business performance
+
+---
+
+4️⃣ Part-to-Whole Analysis
+
+This analysis determines how much each product, subcategory, or category contributes to the overall business.
+
+Example
+
+Category Sales
+      ÷
+Total Sales
+      ×
+100
+
+The analysis calculates:
+
+- Category contribution %
+- Subcategory contribution %
+- Product contribution %
+
+Purpose
+
+To understand which areas contribute the largest share of total revenue.
+
+---
+
+5️⃣ Data Segmentation
+
+Data segmentation divides customers and products into meaningful groups based on their characteristics and performance.
+
+Customer Segmentation
+
+Customers can be classified based on:
+
+- Total spending
+- Number of orders
+- Quantity purchased
+- Customer activity
+- Customer lifespan
+
+Example segments:
+
+- VIP Customers
+- Regular Customers
+- New Customers
+
+Product Segmentation
+
+Products can be classified based on:
+
+- Sales performance
+- Revenue
+- Quantity sold
+- Product cost
+- Product category
+
+Purpose
+
+To understand different customer and product groups and support better business decisions.
+
+---
+
+👥 Customer Analysis
+
+Customer analysis focuses on understanding customer purchasing behavior.
+
+Important metrics include:
 
 - Total Sales
 - Total Quantity
-- Total Customers
 - Total Orders
-- Average Sales
-- Other relevant business metrics
+- Total Products Purchased
+- Customer Lifespan
+- Average Order Value
+- Customer Activity
 
-Purpose:
-To establish a high-level overview of the business performance using key KPIs.
+Customer Value Analysis
 
----
+Customers are evaluated based on their overall contribution to the business.
 
-5️⃣ Magnitude Analysis
+This helps identify:
 
-Magnitude analysis was performed to understand how sales are distributed across different business dimensions.
+- High-value customers
+- Frequent customers
+- Low-value customers
+- Inactive customers
+- New customers
 
-The analysis includes:
+Purpose
 
-- Sales by country
-- Sales by gender
-- Sales by category
-- Sales by subcategory
-- Sales by product
-
-Purpose:
-To identify which dimensions contribute the most to overall sales.
+To understand customer behavior and identify the customers who contribute most to business revenue.
 
 ---
 
-6️⃣ Ranking Analysis
+📦 Product Analysis
 
-Ranking analysis was used to identify the best- and worst-performing products and categories.
+Product analysis evaluates the performance of individual products.
 
 The analysis includes:
 
-- Top-performing products
+- Total sales per product
+- Quantity sold
+- Number of orders
+- Product ranking
+- Product contribution to total sales
+- Product performance over time
+
+Purpose
+
+To identify:
+
+- Best-selling products
 - Lowest-performing products
-- Top categories
-- Top subcategories
-- Product rankings based on sales
-
-SQL ranking and ordering techniques were used to compare performance.
-
-Purpose:
-To identify the highest and lowest performers and understand where the business is generating the most sales.
+- High-revenue products
+- Products requiring further attention
 
 ---
 
-📈 Key Business Questions
+🧠 Advanced SQL Techniques Demonstrated
 
-This EDA project answers important business questions such as:
+This project demonstrates practical usage of advanced SQL concepts.
 
-1. What tables and data are available in the database?
-2. What customer and product dimensions exist?
-3. What is the time period covered by the sales data?
-4. What are the key business measures?
-5. Which countries generate the most sales?
-6. Which gender contributes more to sales?
-7. Which product categories perform best?
-8. Which subcategories generate the highest sales?
-9. Which products are the top performers?
-10. Which products have the lowest sales?
+Common Table Expressions
+
+CTEs are used to:
+
+- Break complex queries into logical steps.
+- Improve query readability.
+- Perform multi-stage analysis.
+
+Window Functions
+
+Window functions are used for:
+
+- Running totals
+- Moving calculations
+- Rankings
+- Previous-period comparisons
+- Customer/product analysis
+
+Ranking Functions
+
+Ranking functions are used to identify:
+
+- Top products
+- Bottom products
+- Top customers
+- Category rankings
+
+Functions include:
+
+ROW_NUMBER()
+RANK()
+DENSE_RANK()
+
+LAG & LEAD
+
+"LAG()" and "LEAD()" are used to compare values between different periods.
+
+For example:
+
+Current Sales - Previous Month Sales
+
+This helps identify growth and decline.
 
 ---
 
-💡 Key Insights
+📊 Key Business Questions
 
-The EDA helps identify:
+This advanced project answers questions such as:
 
-- Overall business sales performance.
-- Major sales-contributing countries and customer segments.
-- Best-performing product categories and subcategories.
-- Top and bottom-performing products.
-- The time period covered by the sales transactions.
-- Important business KPIs and measures.
+1. How are sales changing over time?
+2. What is the monthly and yearly sales growth?
+3. What are the cumulative sales over time?
+4. Which products are performing above or below average?
+5. What percentage of total sales comes from each category?
+6. Which products contribute the most revenue?
+7. Who are the highest-value customers?
+8. Which customers are the most active?
+9. How can customers be segmented based on their behavior?
+10. Which products are the strongest performers?
+11. Which products are underperforming?
+12. How does current performance compare with previous periods?
+13. Which areas of the business contribute the most to overall revenue?
 
-«Note: Specific numerical insights will be added based on the final SQL query results.»
+---
+
+💡 Business Insights
+
+The advanced analysis can help a business:
+
+- Identify high-value customers.
+- Understand customer purchasing behavior.
+- Identify top-performing products.
+- Detect underperforming products.
+- Monitor sales growth.
+- Understand revenue contribution.
+- Track cumulative business performance.
+- Compare current and historical performance.
+- Create meaningful customer segments.
+- Make data-driven business decisions.
+
+«Note: Final numerical findings should be added here after reviewing the actual SQL query results.»
 
 ---
 
 📁 Project Structure
 
-Sales-EDA-SQL/
+Sales-Advanced-SQL/
 │
-├── 01_Database_Exploration.sql
-├── 02_Dimensions_Exploration.sql
-├── 03_Date_Exploration.sql
-├── 04_Measures_Exploration.sql
-├── 05_Magnitude_Analysis.sql
-├── 06_Ranking_Analysis.sql
+├── 01_Change_Over_Time_Analysis.sql
+├── 02_Cumulative_Analysis.sql
+├── 03_Performance_Analysis.sql
+├── 04_Part_to_Whole_Analysis.sql
+├── 05_Data_Segmentation.sql
+├── 06_Customer_Analysis.sql
+├── 07_Product_Analysis.sql
 │
 └── README.md
 
 ---
 
-🧠 Skills Demonstrated
+🔄 Project Workflow
 
-Through this project, I demonstrated practical knowledge of:
+Raw Sales Data
+      ↓
+Data Exploration
+      ↓
+Advanced SQL Analysis
+      ↓
+Customer Analysis
+      ↓
+Product Analysis
+      ↓
+Time-Based Analysis
+      ↓
+Performance Analysis
+      ↓
+Segmentation
+      ↓
+Business Insights
 
-- SQL Server
-- Data Exploration
-- Data Aggregation
-- Filtering
-- Grouping
-- Sorting
-- Date Analysis
-- KPI Calculation
-- Sales Analysis
-- Product Analysis
-- Customer Analysis
-- Ranking Analysis
-- Business-Oriented SQL
+---
+
+🧩 EDA vs Advanced SQL
+
+This portfolio contains two stages of SQL analysis.
+
+📊 EDA Project
+
+The EDA project focuses on understanding the dataset through:
+
+1. Database Exploration
+2. Dimensions Exploration
+3. Date Exploration
+4. Measures Exploration
+5. Magnitude Analysis
+6. Ranking Analysis
+
+🚀 Advanced SQL Project
+
+The Advanced project goes deeper into the data through:
+
+1. Change Over Time Analysis
+2. Cumulative Analysis
+3. Performance Analysis
+4. Part-to-Whole Analysis
+5. Data Segmentation
+6. Customer Analysis
+7. Product Analysis
+
+Together, these projects demonstrate my progression from basic data exploration to advanced SQL-based business analysis.
+
+---
+
+🎓 Skills Demonstrated
+
+Through this project, I demonstrated my ability to:
+
+- Write complex SQL queries.
+- Work with relational databases.
+- Analyze transactional sales data.
+- Use CTEs and subqueries.
+- Apply window functions.
+- Perform ranking analysis.
+- Calculate running totals.
+- Compare current and historical performance.
+- Analyze customer behavior.
+- Analyze product performance.
+- Segment data.
+- Translate business questions into SQL solutions.
+- Generate business insights from data.
 
 ---
 
 🚀 Project Outcome
 
-This EDA project provided a strong foundation for understanding the sales dataset and identifying important business patterns.
+This Advanced SQL project strengthened my ability to use SQL not only for retrieving data, but also for performing advanced business analysis.
 
-It demonstrates my ability to use SQL to explore data, calculate business metrics, analyze sales performance, and answer real-world business questions.
+The project demonstrates how SQL can be used to move from raw transactional data to meaningful insights about:
+
+Sales → Customers → Products → Performance → Trends → Segmentation → Business Decisions
 
 ---
 
 👤 About Me
 
-I am an aspiring Data Analyst building practical skills in data analytics and business intelligence.
+I am an aspiring Data Analyst passionate about using data to solve business problems and generate meaningful insights.
 
 My current learning areas include:
 
@@ -246,8 +443,12 @@ My current learning areas include:
 - Python
 - Data Analytics
 
-This project is part of my Data Analytics portfolio and demonstrates my practical SQL and analytical skills.
+This project is part of my Data Analytics portfolio and demonstrates my practical SQL and analytical capabilities.
 
 ---
 
-⭐ If you find this project useful, feel free to explore the SQL files and analysis.
+⭐ Conclusion
+
+The combination of the Sales EDA SQL Project and Advanced SQL Sales Analysis Project demonstrates my ability to progressively analyze a sales dataset—from understanding the data structure to applying advanced SQL techniques for deeper business analysis.
+
+⭐ Thank you for visiting my project!
