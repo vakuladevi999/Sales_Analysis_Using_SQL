@@ -1,0 +1,25 @@
+-- Part-to-Whole Analysis
+-- Calculate total sales for each year and determine
+-- each year's contribution to the overall sales.
+
+SELECT
+    YEAR(order_date) AS [Order Year],
+
+    -- Calculate total sales for each year
+    SUM(sales_amount) AS [Total Sales],
+
+    -- Calculate each year's percentage contribution
+    -- to the overall total sales
+    ROUND(
+        CAST(SUM(sales_amount) AS FLOAT)
+        / SUM(SUM(sales_amount)) OVER() * 100,
+        2
+    ) AS [Sales Percentage]
+
+FROM fact_sales
+
+-- Group sales by year
+GROUP BY YEAR(order_date)
+
+-- Display results in chronological order
+ORDER BY [Order Year];

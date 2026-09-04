@@ -1,0 +1,17 @@
+-- Yearly Sales Performance Analysis
+-- Analyze the company's sales performance over time
+-- by calculating total sales for each year.
+
+SELECT
+    YEAR(order_date) AS [Order Year],
+
+    -- Calculate total sales for each year
+    SUM(sales_amount) AS [Total Sales]
+
+FROM fact_sales
+
+-- Group sales by year to compare annual performance
+GROUP BY YEAR(order_date)
+
+-- Display the results chronologically
+ORDER BY [Order Year];
